@@ -4,8 +4,8 @@ module Worksnaps
   module Api
     class Users < Base
       PATHS = {
-        me: '/me.xml',
-        all: '/users.xml'
+        me: "/me.xml",
+        all: "/users.xml"
       }.freeze
 
       class << self

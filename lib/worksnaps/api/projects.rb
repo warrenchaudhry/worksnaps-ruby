@@ -5,7 +5,7 @@ module Worksnaps
     class Projects < Base
       class << self
         def all
-          execute_with_base_token('/projects.xml')
+          execute_with_base_token("/projects.xml")
         end
       end
     end

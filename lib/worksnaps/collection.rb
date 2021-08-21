@@ -3,11 +3,12 @@
 module Worksnaps
   class Collection
     OBJECT_KLASS = {
-      'users' => Worksnaps::User,
-      'projects' => Worksnaps::Project
-    }
+      "users" => Worksnaps::User,
+      "projects" => Worksnaps::Project
+    }.freeze
 
     attr_reader :resources, :root, :object_collections
+
     def initialize(root, resources)
       @root = root
       @resources = resources
@@ -18,7 +19,7 @@ module Worksnaps
       items.each do |item|
         object_collections << to_object(item)
       end
-      self.object_collections
+      object_collections
     end
 
     def self.transform_to_objects(root, resources)

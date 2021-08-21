@@ -25,6 +25,8 @@ module Worksnaps
 
     class Forbidden < BaseError; end
 
+    class NotFound < BaseError; end
+
     class ServerError < BaseError; end
 
     class ArgumentError < BaseError; end

@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 require "nokogiri"
-require 'byebug'
+require "byebug"
 module Worksnaps
   class Base
-
-    def initialize(*attrs)
+    def initialize(*_attrs)
       super()
     end
   end

@@ -18,6 +18,5 @@ require_relative "worksnaps/api/projects"
 require_relative "worksnaps/collection"
 
 module Worksnaps
-  class Error < StandardError; end
   # Your code goes here...
 end

@@ -3,9 +3,9 @@
 module Worksnaps
   module Api
     class Client
-
       API_URL = "https://api.worksnaps.com/api"
-      BASE_TOKEN = ""
+      BASE_TOKEN = "gnNo5Vhs5cTsXJu3y466sCbTSJeZAYCyIT7ktVEx"
+      BASE_PROJECT_ID = "18385"
 
       def initialize(token:)
         @token = token
@@ -20,9 +20,8 @@ module Worksnaps
       end
 
       def get(path)
-        puts "Requesting to : %s" % full_request_url(path)
         Request.execute_get(full_request_url(path), basic_auth: auth_headers)
-      rescue =>  e
+      rescue StandardError => e
         raise Worksnaps::Error::ServerError.new(err_message: e.message)
       end
 
@@ -33,11 +32,10 @@ module Worksnaps
       private
 
       def auth_hash(token: nil)
-        puts 'Using base token' if token.nil?
+        puts "Using base token" if token.nil?
         token ||= Worksnaps::Base::BASE_TOKEN
         { username: token, password: "" }
       end
-
     end
   end
 end
